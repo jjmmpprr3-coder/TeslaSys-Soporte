@@ -7,6 +7,6 @@ Aplicación web interactiva para registrar y visualizar solicitudes de soporte t
 - Visualización dinámica de todas las solicitudes en pantalla usando manipulación del DOM.
 
 ## Uso
-1. Abrir `/home/runner/work/TeslaSys-Soporte/TeslaSys-Soporte/index.html` en un navegador.
+1. Abrir `index.html` en un navegador.
 2. Completar el formulario y enviar.
 3. Revisar la sección **Solicitudes registradas** para ver el historial de registros durante la sesión.

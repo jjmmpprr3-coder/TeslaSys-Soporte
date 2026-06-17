@@ -1,4 +1,5 @@
 const solicitudes = [];
+let siguienteId = 1;
 
 const formulario = document.getElementById('support-form');
 const listaSolicitudes = document.getElementById('request-list');
@@ -17,7 +18,12 @@ function renderizarSolicitudes() {
   for (let i = 0; i < solicitudes.length; i += 1) {
     const solicitud = solicitudes[i];
     const item = document.createElement('li');
-    item.innerHTML = `<strong>${solicitud.nombre}</strong> (${solicitud.area}): ${solicitud.problema}`;
+    const nombre = document.createElement('strong');
+    nombre.textContent = solicitud.nombre;
+
+    const detalle = document.createTextNode(` (${solicitud.area}): ${solicitud.problema}`);
+    item.appendChild(nombre);
+    item.appendChild(detalle);
     listaSolicitudes.appendChild(item);
   }
 }
@@ -34,13 +40,14 @@ function registrarSolicitud(evento) {
   }
 
   const solicitud = {
-    id: solicitudes.length + 1,
+    id: siguienteId,
     nombre,
     area,
     problema
   };
 
   solicitudes.push(solicitud);
+  siguienteId += 1;
   formulario.reset();
   renderizarSolicitudes();
 }
