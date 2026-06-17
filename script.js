@@ -1,9 +1,9 @@
 const solicitudes = [];
-let siguienteId = 1;
 
 const formulario = document.getElementById('support-form');
 const listaSolicitudes = document.getElementById('request-list');
 const mensajeVacio = document.getElementById('no-requests');
+const mensajeFormulario = document.getElementById('form-message');
 
 function renderizarSolicitudes() {
   listaSolicitudes.innerHTML = '';
@@ -36,18 +36,18 @@ function registrarSolicitud(evento) {
   const problema = formulario.problema.value.trim();
 
   if (!nombre || !area || !problema) {
+    mensajeFormulario.textContent = 'Completa todos los campos para registrar la solicitud.';
     return;
   }
 
   const solicitud = {
-    id: siguienteId,
     nombre,
     area,
     problema
   };
 
   solicitudes.push(solicitud);
-  siguienteId += 1;
+  mensajeFormulario.textContent = '';
   formulario.reset();
   renderizarSolicitudes();
 }
