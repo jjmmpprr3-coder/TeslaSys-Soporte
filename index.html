@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeslaSys Soporte</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Registro de solicitudes de soporte técnico</h1>
+
+    <form id="support-form">
+      <div class="field">
+        <label for="nombre">Nombre del colaborador</label>
+        <input id="nombre" name="nombre" type="text" required>
+      </div>
+
+      <div class="field">
+        <label for="area">Área</label>
+        <input id="area" name="area" type="text" required>
+      </div>
+
+      <div class="field">
+        <label for="problema">Descripción del problema</label>
+        <textarea id="problema" name="problema" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">Registrar solicitud</button>
+      <p id="form-message" role="status" aria-live="polite"></p>
+    </form>
+
+    <section>
+      <h2>Solicitudes registradas</h2>
+      <p id="no-requests">Aún no hay solicitudes registradas.</p>
+      <ul id="request-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
