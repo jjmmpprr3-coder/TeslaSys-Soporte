@@ -2,7 +2,8 @@
 // PARTE 1: ALMACENAMIENTO DE DATOS (Requerimiento N°4)
 // ==========================================
 // Creamos un arreglo vacío llamado exactamente "solicitudes" para guardar cada objeto.
-let solicitudes = [];
+const STORAGE_KEY = 'solicitudes';
+let solicitudes = cargarSolicitudes();
 
 // ==========================================
 // PARTE 2: CAPTURA DE BOTONES DESDE EL HTML
@@ -58,6 +59,7 @@ function registrar() {
     // 3.4. GUARDAR EN EL ARREGLO
     // Usamos estrictamente el método .push() para meter este objeto nuevo adentro de nuestro arreglo global.
     solicitudes.push(nuevaSolicitud);
+    guardarSolicitudes();
 
     // 3.5. MENSAJE DE ÉXITO EN PANTALLA (Requerimiento N°2)
     // Mostramos un mensaje indicando que todo salió bien usando el DOM.
@@ -106,7 +108,7 @@ function actualizarTabla() {
                 <td>${indice + 1}</td>
                 <td>${solicitud.nombre}</td>
                 <td>${solicitud.area}</td>
-                <td>${solicitud.tipo}</td>
+                <td>${obtenerBadgeTipo(solicitud.tipo)}</td>
                 <td>${solicitud.descripcion}</td>
             </tr>
         `;
@@ -133,5 +135,41 @@ function limpiar() {
     document.getElementById('area').value = "";
     document.getElementById('tipo').value = "";
     document.getElementById('descripcion').value = "";
+}
+
+// ==========================================
+// PARTE 6: PERSISTENCIA Y BADGES VISUALES
+// ==========================================
+function cargarSolicitudes() {
+    let solicitudesGuardadas = localStorage.getItem(STORAGE_KEY);
+
+    if (!solicitudesGuardadas) {
+        return [];
+    }
+
+    try {
+        let datos = JSON.parse(solicitudesGuardadas);
+        return Array.isArray(datos) ? datos : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function guardarSolicitudes() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(solicitudes));
+}
+
+function obtenerBadgeTipo(tipo) {
+    let tipoNormalizado = (tipo || '').trim();
+    let configuracion = {
+        Hardware: { clase: 'badge-hardware', emoji: '🖥️', texto: 'Hardware' },
+        Software: { clase: 'badge-software', emoji: '💾', texto: 'Software' },
+        Redes: { clase: 'badge-redes', emoji: '🌐', texto: 'Redes' },
+        Seguridad: { clase: 'badge-seguridad', emoji: '🔒', texto: 'Seguridad' }
+    };
+
+    let badge = configuracion[tipoNormalizado] || { clase: 'badge-generico', emoji: '📌', texto: tipoNormalizado || 'Sin tipo' };
+
+    return `<span class="badge-solicitud ${badge.clase}">${badge.emoji} ${badge.texto}</span>`;
 }
 
