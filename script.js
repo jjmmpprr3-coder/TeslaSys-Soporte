@@ -81,7 +81,13 @@ function actualizarTabla() {
 
     // Si el arreglo está vacío, le mostramos un mensaje amigable al usuario.
     if (solicitudes.length === 0) {
-        contenedorTabla.innerHTML = `<p>No hay solicitudes registradas.</p>`;
+        contenedorTabla.innerHTML = `
+            <div class="tabla-vacia-contenedor">
+                <div class="tabla-vacia-icono">🛸</div>
+                <h4>Panel de Monitoreo Vacío</h4>
+                <p style="font-size: 13px; color: #94a3b8;">Esperando el ingreso de nuevas solicitudes de soporte</p>
+            </div>
+        `;
         return;
     }
 
@@ -118,7 +124,7 @@ function actualizarTabla() {
     tablaHTML += `
             </tbody>
         </table>
-        <div style="margin-top: 10px; font-weight: bold;">ℹ️ Total de solicitudes registradas: ${solicitudes.length}</div>
+        <div class="total-registros">ℹ️ Total de solicitudes registradas: ${solicitudes.length}</div>
     `;
 
     // Inyectamos todo el código de la tabla generado dinámicamente adentro del contenedor en el HTML.
