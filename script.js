@@ -61,7 +61,7 @@ function registrar() {
 
     // 3.5. MENSAJE DE ÉXITO EN PANTALLA (Requerimiento N°2)
     // Mostramos un mensaje indicando que todo salió bien usando el DOM.
-    mensajePantalla.innerHTML = `<div style="color: green; font-weight: bold; margin-top: 10px;">✅ ¡Solicitud registrada exitosamente!</div>`;
+    mensajePantalla.innerHTML = `<div class="mensaje-estado mensaje-exito fade-in">✅ ¡Solicitud registrada exitosamente!</div>`;
 
     // 3.6. ACTUALIZAR LA INTERFAZ (Requerimiento N°5)
     // Llamamos a la función encargada de dibujar la tabla actualizada sin recargar la página.
