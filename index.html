@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeslaSys Chile - Sistema de Soporte</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>TeslaSys Chile</h1>
+        <h2>Sistema de Registro de Solicitudes de Soporte</h2>
+    </header>
+
+    <main>
+        <section class="formulario-seccion">
+            <h3>Nueva Solicitud de Soporte</h3>
+            
+            <form id="formSolicitud">
+                
+                <div class="campo-grupo">
+                    <label for="nombre">Nombre del colaborador</label>
+                    <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="text" id="correo" placeholder="Ingrese su correo electrónico">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="area">Área de trabajo</label>
+                    <input type="text" id="area" placeholder="Ingrese su área de trabajo">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="tipo">Tipo de solicitud</label>
+                    <select id="tipo">
+                        <option value="">Seleccione una opción</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="Redes">Redes</option>
+                        <option value="Seguridad">Seguridad</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="descripcion">Descripción del problema</label>
+                    <textarea id="descripcion" rows="4" placeholder="Describa el problema que presenta..."></textarea>
+                </div>
+
+                <div class="botones-grupo">
+                    <button type="button" id="btnRegistrar">Registrar Solicitud</button>
+                    <button type="button" id="btnLimpiar">Limpiar Formulario</button>
+                </div>
+
+            </form>
+
+            <div id="mensajePantalla"></div>
+        </section>
+
+        <section class="tabla-seccion">
+            <h3>Solicitudes Registradas</h3>
+            
+            <div id="contenedorTabla">
+                </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
