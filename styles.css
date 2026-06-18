@@ -64,6 +64,13 @@ main {
     border-radius: 8px; /* Bordes redondeados */
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave de panel */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.formulario-seccion:hover,
+.tabla-seccion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(13, 35, 64, 0.12);
 }
 
 .formulario-seccion {
@@ -72,6 +79,34 @@ main {
 
 .tabla-seccion {
     flex: 1.5; /* Le damos un poco más de ancho a la sección de la tabla */
+}
+
+.mensaje-estado {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.mensaje-exito {
+    color: #166534;
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+}
+
+.fade-in {
+    animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 main h3 {
