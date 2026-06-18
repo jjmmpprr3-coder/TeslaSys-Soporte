@@ -1,0 +1,209 @@
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL Y TIPOGRAFÍA
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Evita que los bordes alteren el tamaño de los elementos */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia */
+}
+
+body {
+    background-color: #f4f6f9; /* Color de fondo gris claro para que resalten los paneles */
+    color: #333333;
+    padding-bottom: 40px;
+}
+
+/* ==========================================
+   2. ENCABEZADO (ESTILO CORPORATIVO TESLASYS)
+   ========================================== */
+header {
+    background-color: #0d2340; /* Azul oscuro corporativo profundo */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil abajo */
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header h2 {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+    color: #cbd5e1; /* Gris claro para el subtítulo */
+}
+
+/* ==========================================
+   3. CONTENEDOR PRINCIPAL (DISEÑO EN DOS COLUMNAS)
+   ========================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row; /* Coloca la sección del formulario al lado de la tabla */
+    gap: 30px; /* Separación entre columnas */
+}
+
+/* Ajustes responsivos: Si la pantalla es pequeña, se pone en una sola columna */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+/* Contenedores comunes para las secciones (Paneles blancos) */
+.formulario-seccion, .tabla-seccion {
+    background-color: #ffffff;
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave de panel */
+}
+
+.formulario-seccion {
+    flex: 1; /* Ocupa un espacio proporcional */
+}
+
+.tabla-seccion {
+    flex: 1.5; /* Le damos un poco más de ancho a la sección de la tabla */
+}
+
+main h3 {
+    font-size: 18px;
+    color: #0d2340;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* ==========================================
+   4. ESTILOS DEL FORMULARIO Y CAMPOS
+   ========================================== */
+.campo-grupo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+/* Diseño unificado para inputs, select y textarea */
+.campo-grupo input[type="text"],
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease; /* Transición suave al hacer clic */
+    outline: none;
+}
+
+/* Efecto visual cuando el usuario hace clic (Focus) */
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    border-color: #0d2340;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(13, 35, 64, 0.1);
+}
+
+/* Modificación de tamaño específico de la caja de descripción */
+.campo-grupo textarea {
+    resize: vertical; /* Permite estirar hacia abajo, pero no hacia los lados */
+}
+
+/* ==========================================
+   5. BOTONES Y SUS EFECTOS (HOVER)
+   ========================================== */
+.botones-grupo {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.botones-grupo button {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Botón Registrar (Azul llamativo) */
+#btnRegistrar {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+#btnRegistrar:hover {
+    background-color: #1d4ed8; /* Se oscurece al pasar el mouse */
+}
+
+#btnRegistrar:active {
+    transform: scale(0.98); /* Pequeño efecto de hundimiento al cliquear */
+}
+
+/* Botón Limpiar (Gris/Blanco neutro) */
+#btnLimpiar {
+    background-color: #ffffff;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+#btnLimpiar:hover {
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+#btnLimpiar:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   6. DISEÑO DE LA TABLA DINÁMICA
+   ========================================== */
+#contenedorTabla table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#contenedorTabla th, #contenedorTabla td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Encabezado de la tabla */
+#contenedorTabla th {
+    background-color: #0d2340;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Filas alternas de colores (Efecto cebra para mejor lectura) */
+#contenedorTabla tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Efecto iluminado al pasar el mouse por una fila */
+#contenedorTabla tr:hover {
+    background-color: #f1f5f9;
+}
