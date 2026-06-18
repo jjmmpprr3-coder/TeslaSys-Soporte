@@ -1,0 +1,20 @@
+Herramienta utilizada:
+GitHub Copilot
+
+Prompt 1:
+"Mejora visualmente este formulario HTML utilizando CSS moderno y diseño responsivo adaptado al mockup corporativo de TeslaSys Chile."
+
+Resultado aplicado 1:
+Se incorporó un diseño de dos columnas responsivo utilizando Flexbox, colores corporativos azul oscuro profundo (#0d2340) y formato cebra en las filas de la tabla.
+
+Prompt 2:
+"Modifica la clase .tabla-seccion para darle un diseño de tarjeta flotante avanzada con bordes redondeados a 12px, una sombra difuminada profunda box-shadow que use un tono azul suave #2563eb al pasar el mouse, y añade animaciones para que el elemento simule flotar continuamente."
+
+Resultado aplicado 2:
+Se aplicó un efecto interactivo de tarjeta flotante con pseudo-clases :hover, sombras de profundidad extendidas y una animación fluida con fotogramas clave (@keyframes) en el panel de visualización.
+
+Prompt 3:
+"Dentro de la función actualizarTabla(), modifica el bloque condicional cuando el arreglo solicitudes esté vacío para que inserte dinámicamente un contenedor interactivo con un emoji de un platillo volador (🛸) flotante y textos explicativos estilizados en gris."
+
+Resultado aplicado 3:
+Se programó una interfaz dinámica en el DOM que muestra un estado vacío tecnológico y animado en el panel de monitoreo mientras espera nuevos registros.
